@@ -1,14 +1,12 @@
-import Summary from "@/components/Summary/Summary";
-import styles from "./page.module.css";
-import ShoppingCart from "@/components/ShoppingCart/ShoppingCart";
+import ShoppingCartWrapper from '@/components/ShoppingCart/ShoppingCartWrapper'
+import styles from './page.module.css'
 
 export default function CartRoute() {
   return (
     <div className={styles.page}>
       <div className={styles.content}>
-        <ShoppingCart />
-        <Summary />
+        <ShoppingCartWrapper />
       </div>
     </div>
-  );
+  )
 }

@@ -1,8 +1,13 @@
-import styles from "./Summary.module.css";
+'use client'
+import { ProductWithQuantity } from '@/types/types'
+import styles from './Summary.module.css'
 
-type Props = {};
+const Summary = ({ products }: { products: ProductWithQuantity[] }) => {
+  const subtotal = products.reduce(
+    (total, product) => total + product.quantity * product.price,
+    0
+  )
 
-const Summary = (props: Props) => {
   return (
     <div className={styles.summary}>
       <p>Order Summary</p>
@@ -22,10 +27,11 @@ const Summary = (props: Props) => {
             </div>
           </div>
         </div>
+
         <div className={styles.prices}>
           <div className={styles.subtotal}>
             <p>Subtotal</p>
-            <p>$0</p>
+            <p>{subtotal}$</p>
           </div>
           <div className={styles.taxes}>
             <div className={styles.tax}>
@@ -39,13 +45,13 @@ const Summary = (props: Props) => {
           </div>
           <div className={styles.total}>
             <p>Total</p>
-            <p>$0</p>
+            <p>${(subtotal + 50 + 29).toFixed(2)}</p>
           </div>
         </div>
       </div>
       <button>Checkout</button>
     </div>
-  );
-};
+  )
+}
 
-export default Summary;
+export default Summary
