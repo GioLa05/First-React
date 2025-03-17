@@ -1,0 +1,252 @@
+.mainContainerGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.secondaryContainerGroup {
+  display: grid;
+  grid-template-rows: 1fr 272px;
+}
+
+.containerGroup {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  order: 2;
+}
+
+.container1 {
+  width: 100%;
+  height: 272px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ededed;
+  overflow: hidden;
+}
+
+.container2 {
+  width: 100%;
+  height: 272px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #353535;
+  overflow: hidden;
+}
+
+.container3 {
+  width: 100%;
+  height: 328px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  overflow: hidden;
+  order: 1;
+}
+
+.container4 {
+  width: 100%;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ededed;
+  overflow: hidden;
+}
+
+.container2 img {
+  height: 190px;
+}
+
+.container1 .containerText,
+.container2 .containerText {
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.container3 .containerText {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 48px;
+}
+
+.container4 .containerText {
+  padding: 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.container1 .containerText .main {
+  font-weight: 300;
+  font-size: 29px;
+  line-height: 40px;
+  color: #000;
+}
+
+.container2 .containerText .main {
+  font-weight: 300;
+  font-size: 29px;
+  line-height: 40px;
+  color: #fff;
+}
+
+.container4 .containerText .main {
+  font-weight: 100;
+  font-size: 64px;
+  line-height: 56px;
+  color: #000;
+}
+
+.container4 .containerText .main span {
+  font-weight: 500;
+}
+
+.container1 .containerText .main span,
+.container2 .containerText .main span {
+  font-weight: 500;
+}
+
+.container1 .containerText .secondary,
+.container2 .containerText .secondary,
+.container3 .containerText .secondary,
+.container4 .containerText .secondary {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  color: #909090;
+}
+
+.container3 .containerText {
+  font-weight: 500;
+  font-size: 49px;
+  line-height: 40px;
+  color: #000;
+}
+
+.container4 .shopNow {
+  width: 191px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: #ededed;
+  border: 1px solid #000000;
+  color: #000000;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.container1 .desktop,
+.container2 .desktop,
+.container3 .desktop,
+.container4 .desktop {
+  display: flex;
+}
+
+.container1 .mobile,
+.container2 .mobile,
+.container3 .mobile,
+.container4 .mobile {
+  display: none;
+}
+
+.container1 .main,
+.container1 .secondary,
+.container2 .main,
+.container2 .secondary,
+.container3 .main,
+.container3 .secondary,
+.container4 .main,
+.container4 .secondary {
+  text-align: left;
+}
+
+.shopNow {
+  width: 191px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background-color: #ededed;
+  border: 1px solid #000000;
+  color: #000000;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media (max-width: 1120px) {
+  .mainContainerGroup {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .secondaryContainerGroup {
+    display: grid;
+    grid-template-rows: 1fr;
+  }
+
+  .containerGroup {
+    display: grid;
+    grid-template-columns: 1fr;
+    order: 1;
+  }
+
+  .container1,
+  .container2,
+  .container3,
+  .container4 {
+    padding-inline: 16px;
+    padding-block: 40px;
+    flex-direction: column;
+    gap: 24px;
+    height: auto;
+  }
+
+  .container1 .desktop,
+  .container2 .desktop,
+  .container3 .desktop,
+  .container4 .desktop {
+    display: none;
+  }
+
+  .container1 .mobile,
+  .container2 .mobile,
+  .container3 .mobile,
+  .container4 .mobile {
+    display: flex;
+  }
+
+  .container1 .containerText,
+  .container2 .containerText,
+  .container3 .containerText,
+  .container4 .containerText {
+    align-items: center;
+    padding: 0px;
+  }
+
+  .container4 .containerText .shopNow {
+    width: 100%;
+    padding-inline: 16px;
+  }
+
+  .container1 .main,
+  .container1 .secondary,
+  .container2 .main,
+  .container2 .secondary,
+  .container3 .main,
+  .container3 .secondary,
+  .container4 .main,
+  .container4 .secondary {
+    text-align: center;
+  }
+}

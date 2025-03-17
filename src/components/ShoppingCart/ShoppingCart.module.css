@@ -1,0 +1,104 @@
+.shoppingCarts {
+  max-width: 536px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: #fff;
+}
+
+.shoppingCarts p {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  color: #000;
+}
+
+.shoppingCarts .info {
+  display: flex;
+}
+
+.shoppingCarts .cartProduct {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 32px;
+  border-bottom: 0.5px solid #a3a3a3;
+}
+
+.shoppingCarts .cartProduct:last-child {
+  border-bottom: none;
+}
+
+.shoppingCarts .cartProduct .text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.shoppingCarts .cartProduct .text .h1 {
+  width: 191px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000;
+}
+
+.shoppingCarts .cartProduct .text p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  color: #000;
+}
+
+.shoppingCarts .cartProduct .counter {
+  display: flex;
+  gap: 8px;
+}
+
+.shoppingCarts .cartProduct .counter button {
+  width: 40px;
+  height: 32px;
+  border: 0.5px solid #d9d9d9;
+  border-radius: 4px;
+  background-color: #fff;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+}
+
+.shoppingCarts .cartProduct .price {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 32px;
+  color: #000;
+}
+
+.shoppingCarts .infoRight {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+@media screen and (max-width: 1120px) {
+  .shoppingCarts {
+    max-width: 373px;
+    padding-inline: 16px;
+    margin: auto;
+  }
+
+  .shoppingCarts .info {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .content {
+    padding: 40px 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

@@ -1,0 +1,113 @@
+.mheader {
+  background-color: #fff;
+  width: 100vw;
+  height: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: solid 1px #b5b5b5;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1120px;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  width: 65.39px;
+  height: 22.87px;
+}
+
+.img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.search {
+  display: flex;
+  gap: 8px;
+  width: 372px;
+  height: 56px;
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+}
+
+.searchButton {
+  border: none;
+  background-color: #f5f5f5;
+}
+
+.searchButton::placeholder {
+  color: #adadad;
+  font-weight: 500;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  gap: 52px;
+}
+
+.navigation a {
+  font-size: 16px;
+  font-weight: 400;
+  color: #b2b2b2;
+  text-decoration: none;
+}
+
+.navigation a:nth-child(1) {
+  color: #000000;
+  font-weight: 500;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.burgerMenu {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+@media screen and (max-width: 1120px) {
+  .header {
+    padding-inline: 16px;
+  }
+
+  .search {
+    display: none;
+  }
+  .navigation {
+    display: none;
+  }
+
+  .burgerMenu {
+    display: flex;
+  }
+
+  .icons {
+    display: none;
+  }
+}

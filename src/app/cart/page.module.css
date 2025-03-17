@@ -1,0 +1,9 @@
+.content {
+  max-width: 1120px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 536px 536px;
+  justify-content: space-between;
+  margin: auto;
+  padding-block: 112px;
+}

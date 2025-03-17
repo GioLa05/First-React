@@ -1,0 +1,174 @@
+.products {
+  max-width: 1120px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-block: 56px;
+}
+
+.products .productsTags {
+  max-width: 1120px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.products .productsTags .tag {
+  display: flex;
+  flex-direction: column;
+}
+
+.products .productsTags .tag p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  color: #000;
+}
+
+.products .productsTags .tag .line {
+  width: 100px;
+  height: 2px;
+  border-radius: 10px;
+  background-color: #000;
+}
+
+.products .productsTags .tag2 p {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  white-space: nowrap;
+  color: #8b8b8b;
+}
+
+.products .cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.products .cards .card {
+  width: 268px;
+  height: auto;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 9px;
+  background-color: #f6f6f6;
+}
+
+.products .cards .card .favoriteBtn {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.products .cards .card .info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: center;
+}
+
+.products .cards .card .info p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #000;
+}
+
+.products .cards .card .info .price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 24px;
+  color: #000;
+}
+
+.products .cards .card .infoBuy {
+  display: flex;
+  height: 160px;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 24px;
+}
+
+.products .cards .card .infoBuy .buyNow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.products .cards .card .infoBuy .buyNow button {
+  width: 183px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  color: #fff;
+}
+
+.products .discountText p {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 32px;
+  color: #000;
+}
+
+.products .cards .card .iphone {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 1120px) {
+  .products {
+    padding-inline: 16px;
+  }
+
+  .products .productsTags {
+    display: flex;
+    overflow-x: auto;
+  }
+
+  .products .productsTags::-webkit-scrollbar {
+    width: 0;
+  }
+
+  .products .cards .card {
+    width: 163.5px;
+    height: auto;
+    padding: 24px 12px;
+    gap: 8px;
+    border-radius: 9px;
+  }
+
+  .products .cards .card .iphone img {
+    width: 104px;
+    height: 104px;
+  }
+
+  .products .cards .card .info p {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .products .cards .card .info p {
+    font-size: 16px;
+  }
+
+  .products .cards .card .infoBuy {
+    gap: 16px;
+  }
+}
