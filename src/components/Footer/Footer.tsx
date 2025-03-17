@@ -7,7 +7,7 @@ const Footer = (props: Props) => {
     <footer className={styles.footer}>
       <div className={styles.info}>
         <div className={styles.logo}>
-          <img src="./assets/icons/white-logo.png" alt="white-logo" />
+          <img src="/assets/icons/white-logo.png" alt="white-logo" />
           <p>
             We are a residential interior design firm located in Portland. Our
             boutique-studio offers more than
@@ -35,10 +35,10 @@ const Footer = (props: Props) => {
         </div>
       </div>
       <div className={styles.socials}>
-        <img src="./assets/icons/Twitter.svg" alt="Twitter" />
-        <img src="./assets/icons/Facebook.svg" alt="Facebook" />
-        <img src="./assets/icons/Tiktok.svg" alt="Tiktok" />
-        <img src="./assets/icons/Instagram.svg" alt="Instagram" />
+        <img src="/assets/icons/Twitter.svg" alt="Twitter" />
+        <img src="/assets/icons/Facebook.svg" alt="Facebook" />
+        <img src="/assets/icons/Tiktok.svg" alt="Tiktok" />
+        <img src="/assets/icons/Instagram.svg" alt="Instagram" />
       </div>
     </footer>
   );

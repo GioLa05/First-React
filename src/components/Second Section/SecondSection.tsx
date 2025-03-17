@@ -11,12 +11,12 @@ const SecondSection = (props: Props) => {
           <div className={styles.container1}>
             <img
               className={styles.desktop}
-              src="./assets/icons/airpods-max.png"
+              src="/assets/icons/airpods-max.png"
               alt="airpods-max"
             />
             <img
               className={styles.mobile}
-              src="./assets/icons/airpods-max-mobile.png"
+              src="/assets/icons/airpods-max-mobile.png"
               alt="airpods-max"
             />
             <div className={styles.containerText}>
@@ -32,12 +32,12 @@ const SecondSection = (props: Props) => {
           <div className={styles.container2}>
             <img
               className={styles.desktop}
-              src="./assets/icons/apple-vision-pro.png"
+              src="/assets/icons/apple-vision-pro.png"
               alt="apple-vision-pro"
             />
             <img
               className={styles.mobile}
-              src="./assets/icons/apple-vision-pro-mobile.png"
+              src="/assets/icons/apple-vision-pro-mobile.png"
               alt="apple-vision-pro"
             />
             <div className={styles.containerText}>
@@ -53,12 +53,12 @@ const SecondSection = (props: Props) => {
         <div className={styles.container3}>
           <img
             className={styles.desktop}
-            src="./assets/icons/PlayStation.png"
+            src="/assets/icons/PlayStation.png"
             alt="PlayStation"
           />
           <img
             className={styles.mobile}
-            src="./assets/icons/PlayStation-mobile.png"
+            src="/assets/icons/PlayStation-mobile.png"
             alt="PlayStation"
           />
           <div className={styles.containerText}>
@@ -74,7 +74,7 @@ const SecondSection = (props: Props) => {
         <div>
           <img
             className={styles.mobile}
-            src="./assets/icons/MacBook Pro 14-mobile.png"
+            src="/assets/icons/MacBook Pro 14-mobile.png"
             alt="MacBook-Pro-14-mobile"
           />
         </div>
@@ -90,7 +90,7 @@ const SecondSection = (props: Props) => {
         </div>
         <img
           className={styles.desktop}
-          src="./assets/icons/MacBook-Pro-14.png"
+          src="/assets/icons/MacBook-Pro-14.png"
           alt="MacBook-Pro-14"
         />
       </div>

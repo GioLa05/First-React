@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react";
 import styles from "./Hero.module.css";
 
-type Props = {}
+type Props = {};
 
 const Hero = (props: Props) => {
   return (
@@ -20,18 +20,18 @@ const Hero = (props: Props) => {
         <div className={styles.rContent}>
           <img
             className={styles.desktop}
-            src="./assets/icons/Iphone Image.png"
+            src="/assets/icons/Iphone Image.png"
             alt="Iphone"
           />
           <img
             className={styles.mobile}
-            src="./assets/icons/Iphone Image-mobile.png"
+            src="/assets/icons/Iphone Image-mobile.png"
             alt="Iphone"
           />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;

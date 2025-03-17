@@ -19,6 +19,11 @@
   display: flex;
 }
 
+.image {
+  width: 90px;
+  height: 90px;
+}
+
 .shoppingCarts .cartProduct {
   display: flex;
   gap: 15px;
