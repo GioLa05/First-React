@@ -7,3 +7,14 @@
   margin: auto;
   padding-block: 112px;
 }
+
+
+@media screen and (max-width: 1120px) {
+  .content {
+    padding: 40px 16px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+}
