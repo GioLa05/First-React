@@ -1,30 +1,29 @@
-"use client";
+'use client'
 
-import { error } from "console";
-import styles from "./Products.module.css";
-import { useEffect, useState } from "react";
+import { Product } from '@/types/types'
+import { handleCartAction } from '@/utils/handleAddToCart'
+import { useEffect, useState } from 'react'
+import styles from './Products.module.css'
 
-type Props = {};
+type Props = {}
 
 const Products = (props: Props) => {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch("/products.json")
+    fetch('/products.json')
       .then((res) => res.json())
       .then((json) => {
-        setData(json);
-        setLoading(false);
+        setData(json)
+        setLoading(false)
       })
-      .catch((error) => console.error("Error fetching data", error));
-  }, []);
+      .catch((error) => console.error('Error fetching data', error))
+  }, [])
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>
   }
-
-  console.log(data);
 
   return (
     <div className={styles.products}>
@@ -41,7 +40,7 @@ const Products = (props: Props) => {
         </div>
       </div>
       <div className={styles.cards}>
-        {data.map((product: any) => (
+        {data.map((product: Product) => (
           <div key={product.id} className={styles.card}>
             <div className={styles.favoriteBtn}>
               <img
@@ -58,14 +57,16 @@ const Products = (props: Props) => {
                 <p className={styles.price}>${product.price}</p>
               </div>
               <div className={styles.buyNow}>
-                <button>Buy Now</button>
+                <button onClick={() => handleCartAction(product, 'add')}>
+                  Buy Now
+                </button>
               </div>
             </div>
           </div>
         ))}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Products;
+export default Products

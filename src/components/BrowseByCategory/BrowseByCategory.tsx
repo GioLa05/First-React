@@ -1,9 +1,33 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
 import styles from "./BrowseByCategory.module.css";
 
 type Props = {};
 
 const BrowseByCategory = (props: Props) => {
+  const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/browseByCategory.json")
+      .then((res) => res.json())
+      .then((json) => {
+        setCategories(json);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error("Error fetching categories:", error);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <div>Loading categories...</div>;
+  }
+
+  console.log(categories);
+
   return (
     <div className={styles.browseByCategory}>
       <div className={styles.categoryTop}>
@@ -14,30 +38,16 @@ const BrowseByCategory = (props: Props) => {
         </div>
       </div>
       <div className={styles.cards}>
-        <div className={styles.card}>
-          <img src="/assets/icons/browse-by-category/Phones.svg" alt="Phones" />
-          <p>Phones</p>
-        </div>
-        <div className={styles.card}>
-          <img src="/assets/icons/browse-by-category/Phones.svg" alt="Phones" />
-          <p>Phones</p>
-        </div>
-        <div className={styles.card}>
-          <img src="/assets/icons/browse-by-category/Phones.svg" alt="Phones" />
-          <p>Phones</p>
-        </div>
-        <div className={styles.card}>
-          <img src="/assets/icons/browse-by-category/Phones.svg" alt="Phones" />
-          <p>Phones</p>
-        </div>
-        <div className={styles.card}>
-          <img src="/assets/icons/browse-by-category/Phones.svg" alt="Phones" />
-          <p>Phones</p>
-        </div>
-        <div className={styles.card}>
-          <img src="/assets/icons/browse-by-category/Phones.svg" alt="Phones" />
-          <p>Phones</p>
-        </div>
+        {categories.map  ((categories: any)  => (
+          <div key={categories.id} className={styles.card}>
+            <img
+              className={styles.image}
+              src={categories.image}
+              alt={categories.name}
+            />
+            <p className={styles.name}>{categories.name}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
