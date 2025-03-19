@@ -1,8 +1,50 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import styles from "./Summary.module.css";
 
-type Props = {};
+const Summary = () => {
+  const [subtotal, setSubtotal] = useState(0);
+  
+  // Default values for tax and shipping
+  const defaultTax = 50;
+  const defaultShipping = 29;
 
-const Summary = (props: Props) => {
+  // Function to update subtotal
+  const updateSubtotal = () => {
+    const storedProducts = JSON.parse(localStorage.getItem("cart") || "[]");
+
+    const calculatedSubtotal = storedProducts.reduce(
+      (total: number, product: any) =>
+        total + product.price * product.quantity,
+      0
+    );
+
+    setSubtotal(calculatedSubtotal);
+  };
+
+  useEffect(() => {
+    updateSubtotal(); // Initial load
+
+    // Listen for custom "cartUpdated" event
+    const handleCartUpdate = () => {
+      updateSubtotal(); // Update subtotal when cart changes
+    };
+
+    window.addEventListener("cartUpdated", handleCartUpdate);
+
+    return () => {
+      window.removeEventListener("cartUpdated", handleCartUpdate); // Clean up listener
+    };
+  }, []);
+
+  // Set tax and shipping to 0 if subtotal is 0
+  const tax = subtotal > 0 ? defaultTax : 0;
+  const shipping = subtotal > 0 ? defaultShipping : 0;
+
+  // Calculate total
+  const total = subtotal + tax + shipping;
+
   return (
     <div className={styles.summary}>
       <p>Order Summary</p>
@@ -25,21 +67,21 @@ const Summary = (props: Props) => {
         <div className={styles.prices}>
           <div className={styles.subtotal}>
             <p>Subtotal</p>
-            <p>$0</p>
+            <p>${subtotal.toFixed(2)}</p>
           </div>
           <div className={styles.taxes}>
             <div className={styles.tax}>
               <p className={styles.main}>Estimated Tax</p>
-              <p>$50</p>
+              <p>${tax.toFixed(2)}</p>
             </div>
             <div className={styles.tax}>
               <p className={styles.main}>Estimated shipping & Handling</p>
-              <p>$29</p>
+              <p>${shipping.toFixed(2)}</p>
             </div>
           </div>
           <div className={styles.total}>
             <p>Total</p>
-            <p>$0</p>
+            <p>${total.toFixed(2)}</p>
           </div>
         </div>
       </div>

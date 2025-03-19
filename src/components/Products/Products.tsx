@@ -1,28 +1,50 @@
-'use client'
+"use client";
 
-import { Product } from '@/types/types'
-import { handleCartAction } from '@/utils/handleAddToCart'
-import { useEffect, useState } from 'react'
-import styles from './Products.module.css'
+import { useEffect, useState } from "react";
+import styles from "./Products.module.css";
 
-type Props = {}
+type Product = {
+  id: string | number;
+  name: string;
+  price: number;
+  image: string;
+  quantity?: number;
+};
 
-const Products = (props: Props) => {
-  const [data, setData] = useState([])
-  const [loading, setLoading] = useState(true)
+const Products = () => {
+  const [data, setData] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/products.json')
+    fetch("/products.json")
       .then((res) => res.json())
       .then((json) => {
-        setData(json)
-        setLoading(false)
+        setData(json);
+        setLoading(false);
       })
-      .catch((error) => console.error('Error fetching data', error))
-  }, [])
+      .catch((error) => console.error("Error fetching data", error));
+  }, []);
+
+  const handleBuyNow = (product: Product) => {
+    const existingCart: Product[] = JSON.parse(
+      localStorage.getItem("cart") || "[]"
+    );
+
+    const existingProduct = existingCart.find((item) => item.id === product.id);
+
+    if (existingProduct) {
+      existingProduct.quantity = (existingProduct.quantity || 1) + 1;
+    } else {
+      existingCart.push({ ...product, quantity: 1 });
+    }
+
+    localStorage.setItem("cart", JSON.stringify(existingCart));
+
+    console.log("Current cart contents:", existingCart);
+  };
 
   if (loading) {
-    return <div>Loading...</div>
+    return <div>Loading...</div>;
   }
 
   return (
@@ -40,7 +62,7 @@ const Products = (props: Props) => {
         </div>
       </div>
       <div className={styles.cards}>
-        {data.map((product: Product) => (
+        {data.map((product) => (
           <div key={product.id} className={styles.card}>
             <div className={styles.favoriteBtn}>
               <img
@@ -49,7 +71,7 @@ const Products = (props: Props) => {
               />
             </div>
             <div className={styles.iphone}>
-              <img src={product.image} alt="Iphone" />
+              <img src={product.image} alt={product.name} />
             </div>
             <div className={styles.infoBuy}>
               <div className={styles.info}>
@@ -57,16 +79,14 @@ const Products = (props: Props) => {
                 <p className={styles.price}>${product.price}</p>
               </div>
               <div className={styles.buyNow}>
-                <button onClick={() => handleCartAction(product, 'add')}>
-                  Buy Now
-                </button>
+                <button onClick={() => handleBuyNow(product)}>Buy Now</button>
               </div>
             </div>
           </div>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Products
+export default Products;
